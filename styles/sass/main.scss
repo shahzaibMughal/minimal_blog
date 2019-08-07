@@ -1,0 +1,249 @@
+
+$max-width : 1224px;
+$accent-color : #020202;
+$text-color : #363940;
+
+@function  get-gutter($x){
+    @return $x*8px;
+}
+
+
+/**********************
+    General Styles
+***********************/
+*{
+    padding: 0;
+    margin: 0;
+}
+.icon{
+    width: 48px;
+    height: 48px;
+    fill: $accent-color;
+}
+
+.content-container{
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+
+/**********************
+    End Of General Styles
+***********************/
+
+
+
+
+
+
+
+
+/**********************
+    Header Styles
+***********************/
+
+header{
+    position: relative;
+    margin-bottom: get-gutter(2);
+    .content-container{
+        display: flex;
+        flex-direction: column;
+        padding: get-gutter(2);
+        //box-shadow: 0 1px 2px rgba(black, 0.2);
+    }
+
+    .header-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .menu-toggler-container{
+            display: flex;
+            align-items: center;
+
+            .menu-icon-container{
+                .icon{
+                    margin-right: get-gutter(1);
+                }
+            }
+        }
+
+        .search-box-container{
+            display: flex;
+            position: relative;
+            .icon{
+
+            }
+            .search-box{
+                position: absolute;
+                top: 10px;
+                right: 100%;
+                display: flex;
+                input{
+                    padding: get-gutter(1);
+                    background: none;
+                    border: none;
+                    outline: none;
+                    margin: 0;
+                }
+                &:after{
+                    display: block;
+                    content:'';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: $accent-color;
+                    border-radius: get-gutter(1);
+                }
+            }
+        }
+
+        .logo{
+            width: 200px;
+        }
+    }
+
+    .main-menu{
+        margin-top: get-gutter(2);
+        //position: relative;
+        ul{
+            list-style: none;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .menu-item{
+            a{
+                text-decoration: none;
+                color: $text-color;
+            }
+            padding: get-gutter(2) get-gutter(1.5) 0;
+        }
+
+        &:before{
+            content: '';
+            display: block;
+            //background: red;
+            height: 2px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            box-shadow: 0 1px 2px rgba(black, 0.1);
+        }
+
+
+    }
+
+    &:after{
+        content: '';
+        display: block;
+        //background: red;
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        //top: 0;
+        bottom: 0;
+        left: 0;
+        box-shadow: 0 1px 2px rgba(black, 0.1);
+    }
+}
+
+/**********************
+    End of Header Styles
+***********************/
+
+
+
+
+
+
+//
+//.container{
+//    max-width: 1200px;
+//    margin: 0 auto;
+//}
+//
+//
+//header{
+//
+//    display: flex;
+//    justify-content: space-between;
+//    align-items: center;
+//    box-shadow: 0 1px 1px rgba(black, 0.1);
+//    padding: 48px;
+//
+//    .logo{
+//        width: 200px;
+//    }
+//
+//    #menu_toggler_container{
+//        width: 48px;
+//        height: 48px;
+//        background: red;
+//    }
+//    .search_container{
+//        width: 48px;
+//        height: 48px;
+//        background: red;
+//    }
+//
+//
+//}
+//
+//.main_menu{
+//
+//    padding: 8px 0;
+//    a{
+//        text-decoration: none;
+//        padding: 8px 16px;
+//    }
+//    ul{
+//        list-style: none;
+//        display: flex;
+//        justify-content: center;
+//        align-items: flex-start;
+//        flex-wrap: wrap;
+//    }
+//    li{
+//    }
+//    box-shadow: 0 1px 1px rgba(black, 0.1);
+//}
+//
+//.primary_featured_post{
+//    background-image: url("../../resources/images/rv-mistakes-1024x341.jpg");
+//    background-repeat: no-repeat;
+//    height: 341px;
+//    width: 100%;
+//    background-size: cover;
+//    margin-top: 24px;
+//    display: flex;
+//    flex-direction: column;
+//    justify-content: center;
+//    align-items: center;
+//}
+//.secondary_featured_posts{
+//    display: flex;
+//    flex-wrap: wrap;
+//
+//    .secondary_featured_post{
+//        flex-grow: 1;
+//        background-repeat: no-repeat;
+//        background-size: cover;
+//        height: 250px;
+//        min-width: 300px ;
+//        margin: 24px 0;
+//
+//        &:nth-child(1){
+//            margin-right: 24px;
+//        }
+//        &:nth-child(3){
+//            margin-left: 24px;
+//        }
+//    }
+//
+//}
