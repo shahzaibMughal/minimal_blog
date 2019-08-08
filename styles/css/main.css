@@ -3,14 +3,15 @@
 ***********************/
 * {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif; }
 
 .icon {
   width: 48px;
   height: 48px;
   fill: #020202; }
 
-.content-container {
+.container {
   max-width: 1224px;
   margin: 0 auto; }
 
@@ -18,40 +19,61 @@
     End Of General Styles
 ***********************/
 /**********************
-    Header Styles
+    Header
 ***********************/
 header {
   position: relative;
-  margin-bottom: 16px; }
-  header .content-container {
+  padding: 0 8px; }
+  header .icon {
+    width: 32px;
+    height: 32px;
+    padding: 8px; }
+  header:after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
+  header .container {
     display: flex;
-    flex-direction: column;
-    padding: 16px; }
-  header .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%; }
-    header .header-content .menu-toggler-container {
+    justify-content: flex-end;
+    align-items: center; }
+    header .container .logo-container {
+      order: 1;
+      margin-right: auto; }
+      header .container .logo-container .logo {
+        width: 60px;
+        height: 60px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-left: auto; }
+    header .container .menu-toggler-container {
+      order: 3;
+      margin-top: 4px; }
+      header .container .menu-toggler-container .menu-label {
+        display: none; }
+    header .container .search-box-container {
+      order: 2;
       display: flex;
-      align-items: center; }
-      header .header-content .menu-toggler-container .menu-icon-container .icon {
-        margin-right: 8px; }
-    header .header-content .search-box-container {
-      display: flex;
+      align-items: center;
       position: relative; }
-      header .header-content .search-box-container .search-box {
+      header .container .search-box-container .search-box {
         position: absolute;
-        top: 10px;
         right: 100%;
         display: flex; }
-        header .header-content .search-box-container .search-box input {
+        header .container .search-box-container .search-box input {
           padding: 8px;
           background: none;
           border: none;
           outline: none;
-          margin: 0; }
-        header .header-content .search-box-container .search-box:after {
+          margin: 0;
+          background: white;
+          border-radius: 4px; }
+        header .container .search-box-container .search-box:after {
           display: block;
           content: '';
           position: absolute;
@@ -61,31 +83,64 @@ header {
           left: 0;
           background-color: #020202;
           border-radius: 8px; }
-    header .header-content .logo {
-      width: 200px; }
-  header .main-menu {
-    margin-top: 16px; }
-    header .main-menu ul {
-      list-style: none;
+
+@media (min-width: 500px) {
+  header .container .menu-toggler-container {
+    order: 0; }
+  header .container .logo-container {
+    order: 1;
+    margin: 0 auto; }
+
+  .search-box input {
+    font-size: 1.2em; } }
+@media (min-width: 600px) {
+  header .container .logo-container .logo {
+    width: 100px;
+    height: 100px; } }
+@media (min-width: 700px) {
+  header .icon {
+    width: 40px;
+    height: 40px;
+    padding: 0; } }
+@media (min-width: 900px) {
+  header .container .logo-container .logo {
+    width: 150px;
+    height: 150px; } }
+@media (min-width: 1000px) {
+  header .container .logo-container .logo {
+    width: 250px;
+    height: 250px; } }
+/**********************
+    End Of Header
+***********************/
+/**********************
+    Main Menu
+***********************/
+nav.main-menu {
+  position: relative;
+  margin-bottom: 16px; }
+  nav.main-menu ul {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 8px;
+    max-width: 1224px;
+    margin: 0 auto; }
+    nav.main-menu ul a {
       text-decoration: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap; }
-    header .main-menu .menu-item {
-      padding: 16px 12px 0; }
-      header .main-menu .menu-item a {
-        text-decoration: none;
-        color: #363940; }
-    header .main-menu:before {
-      content: '';
-      display: block;
-      height: 2px;
-      width: 100%;
-      position: absolute;
-      left: 0;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
-  header:after {
+      color: #363940;
+      text-transform: uppercase; }
+    nav.main-menu ul .menu-item {
+      padding: 4px 0; }
+      nav.main-menu ul .menu-item.active a {
+        color: black;
+        font-size: 1.2em; }
+      nav.main-menu ul .menu-item:hover a {
+        color: #b5b8c0; }
+  nav.main-menu:after {
     content: '';
     display: block;
     height: 2px;
@@ -93,8 +148,24 @@ header {
     position: absolute;
     bottom: 0;
     left: 0;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
 
+@media (min-width: 500px) {
+  nav.main-menu ul {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }
+    nav.main-menu ul .menu-item {
+      padding: 8px; } }
+@media (min-width: 900px) {
+  .menu-item a {
+    font-size: 1.2em; }
+
+  nav.main-menu ul .menu-item.active a {
+    font-size: 1.3em; } }
+/**********************
+    End Of Main Menu
+***********************/
 /**********************
     End of Header Styles
 ***********************/

@@ -9,26 +9,26 @@ $(document).ready(function(){
     //------------------------
     const MENU_OPEN_BTN = $('#menu-open');
     const MENU_CLOSE_BTN = $('#menu-close');
-    const MAIN_MENU = $('nav.main-menu');
+    const MAIN_MENU = $('.main-menu');
 
     let openMenu = function(){
         // console.log("Todoo: Open the menu");
-        MAIN_MENU.show();
+        MAIN_MENU.slideDown(200);
         MENU_OPEN_BTN.hide();
         MENU_CLOSE_BTN.show();
 
     };
     let closeMenu = function () {
         // console.log("Todoo: Close the menu");
-        MAIN_MENU.hide();
+        MAIN_MENU.slideUp(200);
         MENU_OPEN_BTN.show();
         MENU_CLOSE_BTN.hide();
     };
 
 
 
-    // closeMenu();  // default
-    openMenu();  // testing
+    closeMenu();  // default
+    // openMenu();  // testing
 
 
 
@@ -57,11 +57,13 @@ $(document).ready(function(){
     //------------------------
     const SEARCH_OPEN_BTN = $('#search-open');
     const SEARCH_CLOSE_BTN = $('#search-close');
-
     const SEARCH_BOX = $('#search-box');
+    const SEARCH_BOX_INPUT = $('#search-box input');
+
     let openSearch = function(){
         // console.log("Todooo: Open the Search");
         SEARCH_BOX.show(100);
+        SEARCH_BOX_INPUT.focus();
         SEARCH_OPEN_BTN.hide(100);
         SEARCH_CLOSE_BTN.show(100);
 
@@ -73,6 +75,7 @@ $(document).ready(function(){
         SEARCH_CLOSE_BTN.hide(100);
     };
     closeSearch(); // by default
+    // openSearch(); // testing
 
 
 

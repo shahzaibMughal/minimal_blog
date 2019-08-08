@@ -1,9 +1,12 @@
+$max-width: 1224px;
+$accent-color: #020202;
+$text-color: #363940;
 
-$max-width : 1224px;
-$accent-color : #020202;
-$text-color : #363940;
+$heading-font: 'Roboto Condensed', sans-serif;
+$text-font: 'Libre Franklin', sans-serif;
 
-@function  get-gutter($x){
+
+@function get-gutter($x) {
     @return $x*8px;
 }
 
@@ -11,17 +14,19 @@ $text-color : #363940;
 /**********************
     General Styles
 ***********************/
-*{
+* {
     padding: 0;
     margin: 0;
+    font-family: $heading-font;
 }
-.icon{
+
+.icon {
     width: 48px;
     height: 48px;
     fill: $accent-color;
 }
 
-.content-container{
+.container {
     max-width: $max-width;
     margin: 0 auto;
 }
@@ -32,64 +37,83 @@ $text-color : #363940;
 ***********************/
 
 
-
-
-
-
-
-
 /**********************
-    Header Styles
+    Header
 ***********************/
 
-header{
+header {
     position: relative;
-    margin-bottom: get-gutter(2);
-    .content-container{
-        display: flex;
-        flex-direction: column;
-        padding: get-gutter(2);
-        //box-shadow: 0 1px 2px rgba(black, 0.2);
+    padding: 0 get-gutter(1);
+
+    .icon {
+        width: 32px;
+        height: 32px;
+        padding: get-gutter(1);
+    }
+    &:after {
+        content: '';
+        display: block;
+        //background: red;
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        //top: 0;
+        bottom: 0;
+        left: 0;
+        box-shadow: 0 1px 2px rgba(black, 0.2);
     }
 
-    .header-content{
+    .container {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
-        width: 100%;
 
-        .menu-toggler-container{
-            display: flex;
-            align-items: center;
+        .logo-container {
+            order: 1;
+            margin-right: auto;
 
-            .menu-icon-container{
-                .icon{
-                    margin-right: get-gutter(1);
-                }
+            .logo {
+                width: 60px;
+                height: 60px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin-left: auto;
             }
         }
 
-        .search-box-container{
-            display: flex;
-            position: relative;
-            .icon{
-
+        .menu-toggler-container {
+            order: 3;
+            margin-top: get-gutter(0.5);
+            .menu-label {
+                display: none
             }
-            .search-box{
+        }
+
+        .search-box-container {
+            order: 2;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            .search-box {
                 position: absolute;
-                top: 10px;
                 right: 100%;
                 display: flex;
-                input{
+
+                input {
                     padding: get-gutter(1);
                     background: none;
                     border: none;
                     outline: none;
                     margin: 0;
+                    background: white;
+                    border-radius: 4px;
                 }
-                &:after{
+
+                &:after {
                     display: block;
-                    content:'';
+                    content: '';
                     position: absolute;
                     width: 100%;
                     height: 2px;
@@ -101,45 +125,123 @@ header{
             }
         }
 
-        .logo{
-            width: 200px;
+    }
+}
+
+
+@media (min-width: 500px) {
+
+    header .container{
+        .menu-toggler-container{
+            order: 0 ;
+        }
+        .logo-container{
+            order: 1;
+            margin: 0 auto;
         }
     }
 
-    .main-menu{
-        margin-top: get-gutter(2);
-        //position: relative;
-        ul{
-            list-style: none;
+    .search-box input{
+       font-size: 1.2em;
+   }
+}
+@media (min-width: 600px) {
+    header .container .logo-container .logo{
+        width: 100px;
+        height: 100px;
+    }
+
+}
+
+@media (min-width: 700px) {
+    header .icon{
+        width: 40px;
+        height: 40px;
+        padding: 0;
+    }
+
+}
+
+
+@media (min-width: 900px) {
+    header .container .logo-container .logo{
+        width: 150px;
+        height: 150px;
+    }
+
+}
+
+
+@media (min-width: 1000px) {
+    header .container .logo-container .logo{
+        width: 250px;
+        height: 250px;
+    }
+
+}
+
+/**********************
+    End Of Header
+***********************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************
+    Main Menu
+***********************/
+nav.main-menu {
+    position: relative;
+    margin-bottom: get-gutter(2);
+
+    ul {
+        list-style: none;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: get-gutter(1);
+        max-width: $max-width;
+        margin: 0 auto;
+
+        a {
             text-decoration: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .menu-item{
-            a{
-                text-decoration: none;
-                color: $text-color;
-            }
-            padding: get-gutter(2) get-gutter(1.5) 0;
+            color: $text-color;
+            text-transform: uppercase;
         }
 
-        &:before{
-            content: '';
-            display: block;
-            //background: red;
-            height: 2px;
-            width: 100%;
-            position: absolute;
-            left: 0;
-            box-shadow: 0 1px 2px rgba(black, 0.1);
+        .menu-item {
+            padding: get-gutter(0.5) 0;
+
+            &.active a {
+
+                color: darken($text-color, 40%);
+                font-size: 1.2em;
+            }
+
+            &:hover a {
+                color: lighten($text-color, 50%);
+            }
         }
 
 
     }
 
-    &:after{
+    &:after {
         content: '';
         display: block;
         //background: red;
@@ -149,17 +251,147 @@ header{
         //top: 0;
         bottom: 0;
         left: 0;
-        box-shadow: 0 1px 2px rgba(black, 0.1);
+        box-shadow: 0 1px 2px rgba(black, 0.2);
     }
 }
 
+@media (min-width: 500px){
+    nav.main-menu ul{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .menu-item{
+            padding: get-gutter(1);
+
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .menu-item a{
+        font-size: 1.2em;
+    }
+    nav.main-menu ul .menu-item.active a{
+        font-size: 1.3em;
+    }
+
+
+}
+
 /**********************
-    End of Header Styles
+    End Of Main Menu
 ***********************/
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//header{
+//    position: relative;
+//    margin-bottom: get-gutter(2);
+//    .container{
+//        display: flex;
+//        flex-direction: column;
+//        padding: get-gutter(2);
+//        //box-shadow: 0 1px 2px rgba(black, 0.2);
+//    }
+//
+//    .head{
+//        display: flex;
+//        justify-content: space-between;
+//        align-items: center;
+//        width: 100%;
+//
+//        .menu-toggler-container{
+//            display: flex;
+//            align-items: center;
+//
+//            .menu-icon-container{
+//                .icon{
+//                    margin-right: get-gutter(1);
+//                }
+//            }
+//        }
+//
+//        .search-box-container{
+//            display: flex;
+//            position: relative;
+//            .icon{
+//
+//            }
+//            .search-box{
+//                position: absolute;
+//                top: 10px;
+//                right: 100%;
+//                display: flex;
+//                input{
+//                    padding: get-gutter(1);
+//                    background: none;
+//                    border: none;
+//                    outline: none;
+//                    margin: 0;
+//                }
+//                &:after{
+//                    display: block;
+//                    content:'';
+//                    position: absolute;
+//                    width: 100%;
+//                    height: 2px;
+//                    bottom: 0;
+//                    left: 0;
+//                    background-color: $accent-color;
+//                    border-radius: get-gutter(1);
+//                }
+//            }
+//        }
+//
+//        .logo{
+//            width: 200px;
+//        }
+//    }
+//
+//    .main-menu{
+//        margin-top: get-gutter(2);
+//        //position: relative;
+
+//        .menu-item{
+//            padding: get-gutter(2) get-gutter(1.5) 0;
+//        }
+//
+//
+//
+//
+//    }
+//
+//    &:after{
+//        content: '';
+//        display: block;
+//        //background: red;
+//        height: 2px;
+//        width: 100%;
+//        position: absolute;
+//        //top: 0;
+//        bottom: 0;
+//        left: 0;
+//        box-shadow: 0 1px 2px rgba(black, 0.1);
+//    }
+//}
+
+/**********************
+    End of Header Styles
+***********************/
 
 
 //
