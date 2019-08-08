@@ -1,7 +1,8 @@
 $max-width: 1224px;
-$accent-color: #020202;
+$para-max-width: 600px;
+$accent-color: #363940;
 $text-color: #363940;
-
+$white : #fff;
 $heading-font: 'Roboto Condensed', sans-serif;
 $text-font: 'Libre Franklin', sans-serif;
 
@@ -20,6 +21,14 @@ $text-font: 'Libre Franklin', sans-serif;
     font-family: $heading-font;
 }
 
+.heading{
+    background: $accent-color;
+    color: $white;
+    //padding: get-gutter(1);
+    text-align: center;
+    margin: get-gutter(2) 0;
+}
+
 .icon {
     width: 48px;
     height: 48px;
@@ -32,9 +41,49 @@ $text-font: 'Libre Franklin', sans-serif;
 }
 
 
+.btn{
+    padding: get-gutter(1) get-gutter(2);
+    background: $accent-color;
+    color: $white;
+    text-decoration: none;
+    border-radius: 2px;
+    margin: get-gutter(2) 0;
+    transition: opacity 100ms ease-in-out;
+    display: block;
+    text-align: center;
+    &:hover,&:focus{
+        opacity: 0.8;
+    }
+}
+
+@media (min-width: 600px){
+    .btn{
+        font-size: 1.2em;
+    }
+}
+@media (min-width: 900px) {
+    .btn{
+        font-size: 1.5em;
+    }
+}
+
 /**********************
     End Of General Styles
 ***********************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /**********************
@@ -169,6 +218,24 @@ header {
         height: 150px;
     }
 
+    header .container .menu-toggler-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .menu-label{
+            display: block;
+            font-size: 1.2em;
+            margin-left: get-gutter(1);
+            &::selection{
+                background: none;
+            }
+
+        }
+    }
+
+
+
 }
 
 
@@ -297,185 +364,417 @@ nav.main-menu {
 
 
 
-//
-//header{
-//    position: relative;
-//    margin-bottom: get-gutter(2);
-//    .container{
-//        display: flex;
-//        flex-direction: column;
-//        padding: get-gutter(2);
-//        //box-shadow: 0 1px 2px rgba(black, 0.2);
-//    }
-//
-//    .head{
-//        display: flex;
-//        justify-content: space-between;
-//        align-items: center;
-//        width: 100%;
-//
-//        .menu-toggler-container{
-//            display: flex;
-//            align-items: center;
-//
-//            .menu-icon-container{
-//                .icon{
-//                    margin-right: get-gutter(1);
-//                }
-//            }
-//        }
-//
-//        .search-box-container{
-//            display: flex;
-//            position: relative;
-//            .icon{
-//
-//            }
-//            .search-box{
-//                position: absolute;
-//                top: 10px;
-//                right: 100%;
-//                display: flex;
-//                input{
-//                    padding: get-gutter(1);
-//                    background: none;
-//                    border: none;
-//                    outline: none;
-//                    margin: 0;
-//                }
-//                &:after{
-//                    display: block;
-//                    content:'';
-//                    position: absolute;
-//                    width: 100%;
-//                    height: 2px;
-//                    bottom: 0;
-//                    left: 0;
-//                    background-color: $accent-color;
-//                    border-radius: get-gutter(1);
-//                }
-//            }
-//        }
-//
-//        .logo{
-//            width: 200px;
-//        }
-//    }
-//
-//    .main-menu{
-//        margin-top: get-gutter(2);
-//        //position: relative;
 
-//        .menu-item{
-//            padding: get-gutter(2) get-gutter(1.5) 0;
-//        }
-//
-//
-//
-//
-//    }
-//
-//    &:after{
-//        content: '';
-//        display: block;
-//        //background: red;
-//        height: 2px;
-//        width: 100%;
-//        position: absolute;
-//        //top: 0;
-//        bottom: 0;
-//        left: 0;
-//        box-shadow: 0 1px 2px rgba(black, 0.1);
-//    }
-//}
+
+
 
 /**********************
-    End of Header Styles
+    Featured Posts
+***********************/
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    margin: get-gutter(2) auto;
+    max-width: $max-width;
+
+   // Featured Posts
+   .primary-featured-post{
+        border-radius: 4px;
+        background-image: url("../../resources/images/rv-mistakes-1024x341.jpg");
+        background-repeat: no-repeat;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2{
+            color: white;
+            font-size: 1.5em;
+            text-align: center;
+            text-shadow: 1px 1px 1px black;
+        }
+    }
+    .secondary-featured-posts-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: get-gutter(2) 0;
+
+
+        .secondary-featured-post{
+            margin: get-gutter(1);
+            width: 100%;
+            height: 200px;
+            border-radius: 2px;
+            background-image: url("../../resources/images/rv-mistakes-1024x341.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+
+            a{
+                background: rgba($accent-color, 0.8);
+                text-decoration: none;
+                color: $white;
+                text-align: center;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                padding: get-gutter(1.2) get-gutter(2);
+                box-sizing: border-box;
+
+                &:hover, &:focus{
+                    opacity: 0.8;
+                }
+            }
+
+            @media (min-width: 350px){
+                height: 250px;
+                a{
+                    font-size: 1.2em;
+                }
+            }
+            @media (min-width: 450px){
+                height: 300px;
+                a{
+                    font-size: 1.4em;
+                }
+            }
+
+        }
+
+        @media (min-width: 300px) {
+            padding: get-gutter(2);
+            border-radius: 4px;
+        }
+        @media (min-width: 660px) {
+            flex-direction: row;
+            //flex-wrap: wrap;
+                .secondary-featured-post{
+                    height: 250px;
+                    &:nth-child(3){
+                        display: none;
+                    }
+                }
+
+
+        }
+        @media (min-width: 985px) {
+            .secondary-featured-post{
+                &:nth-child(3){
+                    display: block;
+                }
+            }
+
+
+        }
+        @media (min-width: $max-width) {
+            padding-left: 0 ;
+            padding-right: 0;
+            .secondary-featured-post{
+                &:nth-child(1){
+                    margin-left: 0;
+                }
+                &:nth-child(3){
+                    margin-right: 0;
+                }
+            }
+        }
+
+    }
+
+}
+
+@media (min-width: 500px){
+    .main-content{
+
+        .primary-featured-post {
+            height: 300px;
+            h2{
+                font-size: 1.8em;
+            }
+        }
+    }
+}
+
+@media (min-width: 600px){
+    .main-content{
+        .primary-featured-post {
+            height: 300px;
+            h2{
+                font-size: 2em;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 900px){
+    .main-content{
+        .primary-featured-post {
+            height: 400px;
+            h2{
+                font-size: 2.4em;
+            }
+        }
+    }
+}
+
+
+
+/**********************
+    End of Featured Posts
 ***********************/
 
 
-//
-//.container{
-//    max-width: 1200px;
-//    margin: 0 auto;
-//}
-//
-//
-//header{
-//
-//    display: flex;
-//    justify-content: space-between;
-//    align-items: center;
-//    box-shadow: 0 1px 1px rgba(black, 0.1);
-//    padding: 48px;
-//
-//    .logo{
-//        width: 200px;
-//    }
-//
-//    #menu_toggler_container{
-//        width: 48px;
-//        height: 48px;
-//        background: red;
-//    }
-//    .search_container{
-//        width: 48px;
-//        height: 48px;
-//        background: red;
-//    }
-//
-//
-//}
-//
-//.main_menu{
-//
-//    padding: 8px 0;
-//    a{
-//        text-decoration: none;
-//        padding: 8px 16px;
-//    }
-//    ul{
-//        list-style: none;
-//        display: flex;
-//        justify-content: center;
-//        align-items: flex-start;
-//        flex-wrap: wrap;
-//    }
-//    li{
-//    }
-//    box-shadow: 0 1px 1px rgba(black, 0.1);
-//}
-//
-//.primary_featured_post{
-//    background-image: url("../../resources/images/rv-mistakes-1024x341.jpg");
-//    background-repeat: no-repeat;
-//    height: 341px;
-//    width: 100%;
-//    background-size: cover;
-//    margin-top: 24px;
-//    display: flex;
-//    flex-direction: column;
-//    justify-content: center;
-//    align-items: center;
-//}
-//.secondary_featured_posts{
-//    display: flex;
-//    flex-wrap: wrap;
-//
-//    .secondary_featured_post{
-//        flex-grow: 1;
-//        background-repeat: no-repeat;
-//        background-size: cover;
-//        height: 250px;
-//        min-width: 300px ;
-//        margin: 24px 0;
-//
-//        &:nth-child(1){
-//            margin-right: 24px;
-//        }
-//        &:nth-child(3){
-//            margin-left: 24px;
-//        }
-//    }
-//
-//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************
+    Content : Post & Sidebar
+***********************/
+.posts-sidebar-container{
+    display: flex;
+    flex-direction: column;
+    max-width: $max-width;
+    margin: 0 auto;
+    .posts{
+        max-width: 750px;
+    }
+
+    @media  (min-width: 1000px){
+        flex-direction: row;
+
+        .side-bar{
+            max-width: 30%;
+
+            &:after {
+                content: '';
+                display: block;
+                //background: red;
+                height: 40%;
+                width: 2px;
+                position: absolute;
+                //top: 0;
+                top: 0;
+                left: -4%;
+                box-shadow: 1px 0 2px rgba(black, 0.1);
+            }
+        }
+        .posts{
+            margin-right: get-gutter(2);
+            max-width: 70%;
+        }
+    }
+
+}
+
+/**********************
+    End of Content : Post & Sidebar
+***********************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************
+    Sidebar
+***********************/
+.side-bar{
+    position: relative;
+
+    .about-us{
+
+        .author-image{
+            width: 200px;
+            height: 200px;
+            margin: get-gutter(1) auto;
+            border-radius: 50%;
+            display: block;
+        }
+        .author-description{
+            text-align: center;
+            padding: 0 get-gutter(2);
+            max-width: $para-max-width;
+            margin: 0 auto ;
+        }
+
+
+
+    }
+
+
+
+}
+/**********************
+    End of Sidebar
+***********************/
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************
+    Posts
+***********************/
+.post{
+    margin: get-gutter(4) 0;
+    .post-image{
+        width: 100%;
+        height: 180px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin: get-gutter(1) 0;
+    }
+    .post-title{
+        padding: get-gutter(1) get-gutter(2);
+        text-align: center;
+        font-size: 1.2em;
+    }
+    .post-excerpt{
+        padding: 0 get-gutter(2);
+        text-align: center;
+        font-size: 1em;
+    }
+    .btn{
+        margin: get-gutter(1) auto;
+        width: 80px;
+        margin-bottom: get-gutter(2);
+
+    }
+
+    @media (min-width: 400px) {
+        .post-image{
+            width: 250px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 4px;
+
+        }
+    }
+
+    @media  (min-width: 650px){
+        display: flex;
+        align-items: flex-start;
+
+        .post-title{
+            text-align: left;
+        }
+        .post-excerpt{
+            text-align: left;
+        }
+        .btn{
+            margin-left: get-gutter(2);
+            font-size: 0.9em;
+        }
+
+    }
+}
+.pagination-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: get-gutter(2);
+    .page-links-container{
+        display: none;
+    }
+
+    .pagination-link{
+        margin: get-gutter(0.5);
+        text-decoration: none;
+        color: $text-color;
+        border: 1px solid rgba(black, 0.1);
+        border-radius: 4px;
+        padding: get-gutter(1) get-gutter(2);
+        &.hide{
+            opacity: 0;
+        }
+        &.active{
+            border-color: rgba(black, 0.5);
+            color: darken($text-color, 20%);
+        }
+
+    }
+
+    @media  (min-width: 490px){
+        .page-links-container{
+            display: block;
+        }
+    }
+}
+/**********************
+    End of Posts
+***********************/
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************
+    Footer
+***********************/
+footer{
+    position: relative;
+    padding: get-gutter(3);
+    &:before {
+        content: '';
+        display: block;
+        //background: red;
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-shadow: 0 1px 2px rgba(black, 0.2);
+    }
+    p{
+        text-align: center;
+        color: $text-color;
+    }
+}
+/**********************
+    End Of Footer
+***********************/

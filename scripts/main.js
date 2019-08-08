@@ -52,6 +52,12 @@ $(document).ready(function(){
 
 
 
+
+
+
+
+
+
     //-----------------------
     // open & close search box
     //------------------------
