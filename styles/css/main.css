@@ -11,6 +11,14 @@
   color: #fff;
   text-align: center;
   margin: 16px 0; }
+  .heading.achieve {
+    color: #070809;
+    background: none;
+    text-align: center;
+    font-size: 2em; }
+    @media (min-width: 650px) {
+      .heading.achieve {
+        text-align: left; } }
 
 .icon {
   width: 48px;
@@ -209,6 +217,7 @@ nav.main-menu {
   display: flex;
   flex-direction: column;
   margin: 16px auto;
+  padding: 16px;
   max-width: 1224px; }
   .main-content .primary-featured-post {
     border-radius: 4px;
@@ -397,7 +406,7 @@ nav.main-menu {
         text-align: left; }
       .post .btn {
         margin-left: 16px;
-        font-size: 0.9em; } }
+        font-size: 1em; } }
 
 .pagination-links {
   display: flex;

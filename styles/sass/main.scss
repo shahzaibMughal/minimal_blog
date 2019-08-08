@@ -27,6 +27,17 @@ $text-font: 'Libre Franklin', sans-serif;
     //padding: get-gutter(1);
     text-align: center;
     margin: get-gutter(2) 0;
+
+    &.achieve{
+        color: darken($text-color,20);
+        background: none;
+        text-align: center;
+        font-size: 2em;
+
+        @media  (min-width: 650px){
+            text-align: left;
+        }
+    }
 }
 
 .icon {
@@ -376,6 +387,7 @@ nav.main-menu {
     display: flex;
     flex-direction: column;
     margin: get-gutter(2) auto;
+    padding: get-gutter(2);
     max-width: $max-width;
 
    // Featured Posts
@@ -701,7 +713,7 @@ nav.main-menu {
         }
         .btn{
             margin-left: get-gutter(2);
-            font-size: 0.9em;
+            font-size: 1em;
         }
 
     }
