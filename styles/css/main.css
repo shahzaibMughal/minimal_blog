@@ -19,6 +19,8 @@
     @media (min-width: 650px) {
       .heading.achieve {
         text-align: left; } }
+  .heading.achieve.single-post {
+    text-align: center; }
 
 .icon {
   width: 48px;
@@ -28,6 +30,9 @@
 .container {
   max-width: 1224px;
   margin: 0 auto; }
+
+a {
+  color: #0095cc; }
 
 .btn {
   padding: 8px 16px;
@@ -455,6 +460,51 @@ footer {
 
 /**********************
     End Of Footer
+***********************/
+/**********************
+    Single Post Detail
+***********************/
+.meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 16px 0; }
+  .meta li {
+    color: rgba(54, 57, 64, 0.7);
+    margin: 1.6px 0; }
+    .meta li:first-child {
+      list-style: none; }
+  @media (min-width: 500px) {
+    .meta {
+      flex-direction: row; }
+      .meta li {
+        margin-left: 16px;
+        margin-right: 16px; } }
+
+.single-post .single-post-image {
+  width: 100%;
+  margin: 16px 0;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+.single-post .single-post-content {
+  margin: 32px 0; }
+.single-post hr {
+  opacity: 0.5; }
+@media (min-width: 400px) {
+  .single-post .single-post-image {
+    height: 300px; } }
+@media (min-width: 600px) {
+  .single-post .single-post-image {
+    height: 400px; } }
+@media (min-width: 1100px) {
+  .single-post .single-post-image {
+    height: 500px; } }
+
+/**********************
+    End Of Single Post Detail
 ***********************/
 
 /*# sourceMappingURL=main.css.map */
