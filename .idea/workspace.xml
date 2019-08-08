@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be288cec-aa4b-42ef-8729-850033d6c94b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/single-post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archieve-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/archieve-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/.sass-cache/c3dfcb14c11cc0d7651f925769b0e497afb6d21c/main.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/styles/.sass-cache/c3dfcb14c11cc0d7651f925769b0e497afb6d21c/main.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/css/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/styles/css/main.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/sass/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/single-post.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/single-post.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+            <state relative-caret-position="318">
+              <caret line="69" column="63" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -127,12 +120,12 @@
       <workItem from="1565194615138" duration="17630000" />
       <workItem from="1565237228529" duration="2936000" />
       <workItem from="1565270777450" duration="2972000" />
-      <workItem from="1565281909868" duration="11108000" />
+      <workItem from="1565281909868" duration="11405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37629000" />
+    <option name="totallyTimeSpent" value="37926000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -151,7 +144,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.9433428" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -227,8 +220,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/single-post.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+        <state relative-caret-position="318">
+          <caret line="69" column="63" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
           <folding>
             <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
