@@ -195,8 +195,14 @@ nav.main-menu {
       nav.main-menu ul .menu-item.active a {
         color: black;
         font-size: 1.2em; }
-      nav.main-menu ul .menu-item:hover a {
+      nav.main-menu ul .menu-item:hover > a {
         color: #b5b8c0; }
+      nav.main-menu ul .menu-item .sub-menu .sub-menu-item {
+        margin: 4px 8px; }
+        nav.main-menu ul .menu-item .sub-menu .sub-menu-item.active a {
+          color: black; }
+        nav.main-menu ul .menu-item .sub-menu .sub-menu-item:hover a {
+          color: #b5b8c0; }
   nav.main-menu:after {
     content: '';
     display: block;
@@ -213,7 +219,27 @@ nav.main-menu {
     align-items: center;
     justify-content: center; }
     nav.main-menu ul .menu-item {
-      padding: 8px; } }
+      padding: 12px;
+      position: relative; }
+      nav.main-menu ul .menu-item .sub-menu + a:after {
+        content: ">";
+        transform: rotate(90deg);
+        font-size: 1.2em;
+        display: inline-block; }
+      nav.main-menu ul .menu-item:hover .sub-menu {
+        display: block; }
+    nav.main-menu ul .sub-menu {
+      display: none;
+      position: absolute;
+      background: #ffffff;
+      top: 40px;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      left: 0;
+      z-index: 99;
+      align-self: flex-start;
+      justify-content: flex-start; }
+      nav.main-menu ul .sub-menu .sub-menu-item {
+        padding: 4px 8px; } }
 @media (min-width: 900px) {
   .menu-item a {
     font-size: 1.2em; }

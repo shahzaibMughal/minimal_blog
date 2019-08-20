@@ -337,8 +337,21 @@ nav.main-menu {
                 font-size: 1.2em;
             }
 
-            &:hover a {
+            &:hover > a {
                 color: lighten($default-text-color, 50%);
+            }
+
+            .sub-menu{
+
+                .sub-menu-item{
+                    margin: get-gutter(0.5) get-gutter(1);
+                    &.active a {
+                        color: darken($default-text-color, 40%);
+                    }
+                    &:hover a {
+                        color: lighten($default-text-color, 50%);
+                    }
+                }
             }
         }
 
@@ -364,9 +377,45 @@ nav.main-menu {
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        .menu-item{
-            padding: get-gutter(1);
 
+        .menu-item{
+            padding: get-gutter(1.5);
+            position: relative;
+
+            .sub-menu+a{
+                &:after{
+                    content: ">";
+                    transform: rotate(90deg);
+                    font-size: 1.2em;
+                    display: inline-block;
+                }
+            }
+
+
+            &:hover{
+                .sub-menu{
+                    display: block;
+                }
+
+            }
+        }
+
+        .sub-menu{
+
+
+            display: none;
+            position: absolute;
+            background: $body-background;
+            top: 40px;
+            box-shadow: 1px 1px 2px rgba(black,0.2);
+            left: 0;
+            z-index: 99;
+            align-self: flex-start;
+            justify-content: flex-start;
+
+            .sub-menu-item{
+                padding: get-gutter(0.5) get-gutter(1) ;
+            }
         }
     }
 }
