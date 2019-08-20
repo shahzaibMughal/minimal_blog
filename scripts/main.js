@@ -9,31 +9,35 @@ $(document).ready(function(){
     //------------------------
     const MENU_OPEN_BTN = $('#menu-open');
     const MENU_CLOSE_BTN = $('#menu-close');
+    const MENU_TOGGLER_CONTAINER = $('.menu-toggler-container');
+
+
     const MAIN_MENU = $('.main-menu');
+    let isMenuOpen = false; // by default menu is closed
 
     let openMenu = function(){
-        // console.log("Todoo: Open the menu");
         MAIN_MENU.slideDown(200);
         MENU_OPEN_BTN.hide();
         MENU_CLOSE_BTN.show();
-
     };
     let closeMenu = function () {
-        // console.log("Todoo: Close the menu");
         MAIN_MENU.slideUp(200);
         MENU_OPEN_BTN.show();
         MENU_CLOSE_BTN.hide();
     };
+    let toggleMenu = function () {
+        isMenuOpen ? closeMenu() : openMenu();
+        isMenuOpen=!isMenuOpen;
+    };
 
 
-
-    closeMenu();  // default
-    // openMenu();  // testing
-
+    isMenuOpen ? openMenu() :closeMenu() ; // apply default
 
 
     MENU_OPEN_BTN.on("click",openMenu);
     MENU_CLOSE_BTN.on("click",closeMenu);
+    MENU_TOGGLER_CONTAINER.on("click",toggleMenu);     // a little fix, without this, user can't open menu by click on "MENU" text
+
 
     //-----------------------
     // End of open menu & close main menu

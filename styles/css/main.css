@@ -4,15 +4,19 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "Roboto Condensed", sans-serif; }
+  font-family: "Roboto Condensed", sans-serif;
+  color: #363940; }
+
+body {
+  background: #ffffff; }
 
 .heading {
   background: #363940;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   margin: 16px 0; }
   .heading.achieve {
-    color: #070809;
+    color: #363940;
     background: none;
     text-align: center;
     font-size: 2em; }
@@ -32,12 +36,12 @@
   margin: 0 auto; }
 
 a {
-  color: #0095cc; }
+  color: #0f7faf; }
 
 .btn {
   padding: 8px 16px;
   background: #363940;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   border-radius: 2px;
   margin: 16px 0;
@@ -66,6 +70,8 @@ header {
     width: 32px;
     height: 32px;
     padding: 8px; }
+    header .icon:hover, header .icon:active {
+      cursor: pointer; }
   header:after {
     content: '';
     display: block;
@@ -94,6 +100,8 @@ header {
       margin-top: 4px; }
       header .container .menu-toggler-container .menu-label {
         display: none; }
+      header .container .menu-toggler-container:hover, header .container .menu-toggler-container:active {
+        cursor: pointer; }
     header .container .search-box-container {
       order: 2;
       display: flex;
@@ -109,7 +117,7 @@ header {
           border: none;
           outline: none;
           margin: 0;
-          background: white;
+          background: #ffffff;
           border-radius: 4px; }
         header .container .search-box-container .search-box:after {
           display: block;
@@ -235,8 +243,10 @@ nav.main-menu {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+    .main-content .primary-featured-post:hover {
+      cursor: pointer; }
     .main-content .primary-featured-post h2 {
-      color: white;
+      color: #ffffff;
       font-size: 1.5em;
       text-align: center;
       text-shadow: 1px 1px 1px black; }
@@ -256,10 +266,13 @@ nav.main-menu {
       background-size: cover;
       background-position: center;
       position: relative; }
+      .main-content .secondary-featured-posts-container .secondary-featured-post:hover, .main-content .secondary-featured-posts-container .secondary-featured-post:focus {
+        opacity: 0.7;
+        cursor: pointer; }
       .main-content .secondary-featured-posts-container .secondary-featured-post a {
         background: rgba(54, 57, 64, 0.8);
         text-decoration: none;
-        color: #fff;
+        color: #ffffff;
         text-align: center;
         display: block;
         position: absolute;
@@ -267,8 +280,6 @@ nav.main-menu {
         width: 100%;
         padding: 9.6px 16px;
         box-sizing: border-box; }
-        .main-content .secondary-featured-posts-container .secondary-featured-post a:hover, .main-content .secondary-featured-posts-container .secondary-featured-post a:focus {
-          opacity: 0.8; }
       @media (min-width: 350px) {
         .main-content .secondary-featured-posts-container .secondary-featured-post {
           height: 250px; }
@@ -335,15 +346,6 @@ nav.main-menu {
       flex-direction: row; }
       .posts-sidebar-container .side-bar {
         max-width: 30%; }
-        .posts-sidebar-container .side-bar:after {
-          content: '';
-          display: block;
-          height: 40%;
-          width: 2px;
-          position: absolute;
-          top: 0;
-          left: -4%;
-          box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1); }
       .posts-sidebar-container .posts {
         margin-right: 16px;
         max-width: 70%; } }
@@ -376,6 +378,10 @@ nav.main-menu {
 ***********************/
 .post {
   margin: 32px 0; }
+  .post:hover, .post:focus {
+    cursor: pointer; }
+    .post:hover .post-image, .post:focus .post-image {
+      opacity: 0.9; }
   .post .post-image {
     width: 100%;
     height: 180px;
@@ -430,8 +436,10 @@ nav.main-menu {
     .pagination-links .pagination-link.hide {
       opacity: 0; }
     .pagination-links .pagination-link.active {
-      border-color: rgba(0, 0, 0, 0.5);
-      color: #070809; }
+      border-color: rgba(0, 0, 0, 0.8); }
+    .pagination-links .pagination-link:hover {
+      cursor: pointer;
+      border-color: rgba(0, 0, 0, 0.4); }
   @media (min-width: 490px) {
     .pagination-links .page-links-container {
       display: block; } }
